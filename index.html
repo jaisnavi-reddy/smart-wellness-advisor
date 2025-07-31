@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <title>Health Advisor Form</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Glow & Grow <i class='fas fa-air-freshener'></i></h2>
+        <center><p>"Glow inside and out with the right care."</p></center>
+        <form action="/result" method="post">
+            <input type="text" name="name" placeholder="Your Name" required><br>
+            <input type="number" name="height" placeholder="Height (cm)" required><br>
+            <input type="number" name="weight" placeholder="Weight (kg)" required><br>
+
+            <label>Skin Type:</label>
+            <select name="skin_type" required>
+                <option value="dry">Dry</option>
+                <option value="oily">Oily</option>
+                <option value="sensitive">Sensitive</option>
+                <option value="combination">Combination</option>
+            </select>
+
+            <label>Hair Type:</label>
+            <select name="hair_type" required>
+                <option value="straight">Straight</option>
+                <option value="wavy">Wavy</option>
+                <option value="curly">Curly</option>
+                <option value="coily">Coily</option>
+            </select>
+
+            <label>Diet Preference:</label>
+            <select name="diet" required>
+                <option value="any">Any</option>
+                <option value="vegan">Vegan</option>
+                <option value="nonveg">Non-Veg</option>
+            </select>
+
+            <label>What are your concerns?</label><br>
+            <input type="checkbox" name="concerns" value="acne"> Acne<br>
+            <input type="checkbox" name="concerns" value="tanning"> Tanning<br>
+            <input type="checkbox" name="concerns" value="dryness"> Dryness<br>
+            <input type="checkbox" name="concerns" value="pigmentation"> Pigmentation<br>
+            <input type="checkbox" name="concerns" value="hairfall"> Hair Fall<br>
+            <input type="checkbox" name="concerns" value="frizziness"> Frizziness<br>
+            <input type="checkbox" name="concerns" value="dandruff"> Dandruff<br>
+            <input type="checkbox" name="concerns" value="hair maintenance"> Hair Maintenance<br>
+            <input type="checkbox" name="concerns" value="fatigue"> Fatigue<br>
+            <input type="checkbox" name="concerns" value="weak immunity"> Weak Immunity<br>
+            <input type="checkbox" name="concerns" value="stress"> Stress<br>
+            <input type="checkbox" name="concerns" value="dehydration"> Dehydration<br><br>
+
+            <button type="submit">Get Recommendations <i class='fas fa-search'></i></button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <title>Your Personalized Suggestions</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2><i class='fas fa-user-circle' style='font-size:24px'></i> Hello, {{ name }} 👋</h2><br>
+        <p>Your BMI(Body mass index): <strong>{{ bmi }}</strong> ({{ bmi_category }})</p>
+
+        <h3>Your Selected Concerns:</h3>
+        <ul>
+            {% for concern in concerns %}
+                <li>{{ concern.title() }}</li>
+            {% endfor %}
+        </ul>
+
+        <h3>Suggestions Based on Your Inputs:</h3>
+        <ul>
+            {% for suggestion in collected_suggestions %}
+                <li>{{ suggestion }}</li>
+            {% endfor %}
+        </ul>
+
+        <h3>Morning Routine ({{ skin_type.title() }} Skin):</h3>
+        <ul>
+            {% for step in morning_routine %}
+                <li>{{ step }}</li>
+            {% endfor %}
+        </ul>
+
+        <h3>Night Routine:</h3>
+        <ul>
+            {% for step in night_routine %}
+                <li>{{ step }}</li>
+            {% endfor %}
+        </ul>
+
+        <h3>Recommended Foods:</h3>
+        <ul>
+            {% for food in foods_for_user %}
+                <li>{{ food }}</li>
+            {% endfor %}
+        </ul>
+
+        <h3>Suggested Products:</h3>
+        <ul>
+            {% for product in products_for_user %}
+                <li>{{ product }}</li>
+            {% endfor %}
+        </ul>
+         <button type="submit" style="background-color: #007bff;color: white;padding: 12px 20px;border: none;border-radius: 6px;cursor: pointer;width: 20%;font-size: 16px;"><a href="/" class="back" >Back</a></button>
+    </div>
+</body>
+</html>
